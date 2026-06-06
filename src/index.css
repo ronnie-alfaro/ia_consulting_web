@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  background: #05070d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #05070d;
+}
+
+::selection {
+  background: rgba(46, 233, 255, 0.3);
+}
+
+.glass {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.045));
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(22px);
+}
+
+.section-shell {
+  position: relative;
+  z-index: 10;
+  margin-inline: auto;
+  width: min(1120px, calc(100% - 32px));
+  padding-block: 72px;
+}
+
+@media (min-width: 768px) {
+  .section-shell {
+    width: min(1180px, calc(100% - 64px));
+    padding-block: 104px;
+  }
+}
+
+.text-gradient {
+  background: linear-gradient(100deg, #ffffff 0%, #2ee9ff 36%, #6dffbf 64%, #bda7ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.aurora-border {
+  position: relative;
+}
+
+.aurora-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  border-radius: inherit;
+  background: linear-gradient(120deg, rgba(46, 233, 255, 0.7), rgba(124, 60, 255, 0.55), rgba(109, 255, 191, 0.55));
+  opacity: 0.42;
+}
+
+.scanner-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
